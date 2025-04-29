@@ -16,8 +16,8 @@ function App() {
     <> 
       <Container> 
         <NavBar /> 
-        <Home />
-        <CreateBooks />
+        {/* <Home />*/}
+        {/* <CreateBooks />*/}
         <ListBooks />
       </Container> 
     </> 
