@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 
 import NavBar from './components/layouts/NavBar'
@@ -10,18 +8,19 @@ import CreateBooks from './components/pages/CreateBooks'
 import ListBooks from './components/pages/ListBooks'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return ( 
-    <> 
-      <Container> 
-        <NavBar /> 
-        {/* <Home />*/}
-        {/* <CreateBooks />*/}
-        <ListBooks />
-      </Container> 
-    </> 
+  return (
+    <BrowserRouter>
+      <NavBar />
+      <Container>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/newBook" element={<CreateBooks />} />
+          <Route path="/listBook" element={<ListBooks />} />
+        </Routes>
+      </Container>
+    </BrowserRouter>
   )
 }
 
 export default App
+
